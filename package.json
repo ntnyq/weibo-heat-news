@@ -1,5 +1,5 @@
 {
-  "name": "weibo-bot",
+  "name": "weibo-heat-news",
   "version": "0.0.1",
   "main": "index.js",
   "author": {
@@ -15,6 +15,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "cheerio": "^1.0.0-rc.3",
+    "dayjs": "^1.8.29",
     "fs-extra": "^9.0.1",
     "markdown-table": "^2.0.0",
     "string-width": "^4.2.0",
