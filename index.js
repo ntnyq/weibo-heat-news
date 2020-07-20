@@ -4,11 +4,14 @@ const cheerio = require('cheerio')
 const width = require('string-width')
 const table = require('markdown-table')
 const dayjs = require('dayjs')
+const utc = require('dayjs/plugin/utc')
 const UserAgent = require('user-agents')
 
 const WEIBO_BASE_URL = 'https://s.weibo.com'
 const WEIBO_HEAT_NEWS_URL = `${WEIBO_BASE_URL}/top/summary`
 const ua = new UserAgent({ platform: 'Win32' })
+
+dayjs.extend(utc)
 
 async function fetchData() {
   const { status, data } = await axios.get(WEIBO_HEAT_NEWS_URL, {
@@ -46,7 +49,7 @@ async function main() {
   const output = table(list, { stringLength: width })
   const content = [
     `<h1 align="center">微博热搜榜</h1>`,
-    `> 更新于 ${dayjs().format('YYYY-MM-DD HH:mm:ss')}`,
+    `> 更新于 ${dayjs().utcOffset(8).format('YYYY-MM-DD HH:mm:ss')}`,
     output,
   ]
 
