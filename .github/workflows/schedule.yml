@@ -5,7 +5,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: '* */24 * * *'
+    - cron: '0 9 * * *' # Everydat at 09:00
 
 jobs:
   deploy:
@@ -18,7 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
 
-      - name: Use Node.js ${{ matrix.node-versio }}
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
