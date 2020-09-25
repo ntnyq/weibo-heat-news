@@ -5,7 +5,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: '0 9 * * *' # Everydat at 09:00
+    - cron: '0 0 1 * *' # Everyday at 09:00
 
 jobs:
   deploy:
