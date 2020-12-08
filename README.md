@@ -2,9 +2,16 @@
 
 :newspaper: Update weibo heat news
 
-## Online Preview
+## Usage
 
-[weibo-heat-news](https://ntnyq.github.io/weibo-heat-news)
+```sh
+$ deno run --unstable --allow-net --allow-read --allow-write --import-map=import_map.json mod.ts
+```
+
+## Weibo News
+
+<!-- BEGIN WEIBO -->
+<!-- END WEIBO -->
 
 ## Prior Art
 
