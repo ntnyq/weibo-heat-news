@@ -38,7 +38,7 @@ export async function createReadme4Weibo(words: Word[]): Promise<string> {
   const readme = await Deno.readTextFile("./README.md");
   return readme.replace(
     /<!-- BEGIN WEIBO -->[\W\w]*<!-- END WEIBO -->/,
-    createWeiboList(words)
+    createWeiboList(words),
   );
 }
 
