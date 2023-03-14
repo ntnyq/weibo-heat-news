@@ -1,14 +1,13 @@
 import type { Word } from "./types.ts";
 
 /**
- *
  * @param words
- * @param anothor
+ * @param another
  */
-export function mergeWords4Weibo(words: Word[], anothor: Word[]): Word[] {
+export function mergeWords4Weibo(words: Word[], another: Word[]): Word[] {
   const obj: Record<string, string> = {};
 
-  for (const w of words.concat(anothor)) {
+  for (const w of words.concat(another)) {
     obj[w.url] = w.title;
   }
 
@@ -16,7 +15,6 @@ export function mergeWords4Weibo(words: Word[], anothor: Word[]): Word[] {
 }
 
 /**
- *
  * @param words
  */
 export function createWeiboList(words: Word[]): string {
@@ -31,7 +29,6 @@ export function createWeiboList(words: Word[]): string {
 }
 
 /**
- *
  * @param words
  */
 export async function createReadme4Weibo(words: Word[]): Promise<string> {
@@ -43,7 +40,6 @@ export async function createReadme4Weibo(words: Word[]): Promise<string> {
 }
 
 /**
- *
  * @param words
  * @param date
  */
