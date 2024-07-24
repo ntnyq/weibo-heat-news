@@ -4,15 +4,14 @@
 
 ## Usage
 
-```sh
-$ deno run --unstable --allow-env --allow-net --allow-read --allow-write --import-map=import_map.json mod.ts
+```shell
+deno run --allow-env --allow-net --allow-read --allow-write mod.ts
 ```
 
 ## Weibo News
 
 <!-- BEGIN WEIBO -->
-<!-- Updated at: Tue Mar 14 2023 12:31:23 GMT+0800 (China Standard Time) -->
-
+<!-- Updated at: Thu Jul 25 2024 01:51:40 GMT+0800 (China Standard Time) -->
 <!-- END WEIBO -->
 
 ## Prior Art

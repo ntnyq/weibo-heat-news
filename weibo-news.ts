@@ -1,7 +1,7 @@
-#!/usr/bin/env -S deno run --unstable --allow-net --allow-read --allow-write--allow-write
-import { format } from "std/datetime/mod.ts";
-import { join } from "std/path/mod.ts";
-import { load } from "std/dotenv/mod.ts";
+#!/usr/bin/env -S deno run --allow-net --allow-read --allow-write
+import { format } from "@std/datetime";
+import { join } from "@std/path";
+import { load } from "@std/dotenv";
 
 import type { Word } from "./types.ts";
 
@@ -18,7 +18,6 @@ if (!ENV.WEIBO_COOKIE) {
   Deno.exit(1);
 }
 
-// TODO: fix the regexp
 const regexp = /<a href="(\/weibo\?q=[^"]+)".*?>([\s\S]*?)<\/a>/g;
 const response = await fetch("https://s.weibo.com/top/summary", {
   headers: {
@@ -34,7 +33,7 @@ if (!response.ok) {
 }
 
 const result: string = await response.text();
-const matches = result.match(regexp);
+const matches = result.matchAll(regexp);
 
 const words: Word[] = Array.from(matches ?? []).map((x) => ({
   url: x[1],
