@@ -6,7 +6,7 @@ export async function main() {
 
 try {
   main();
-  console.log(`Write file successfully!`);
+  console.log("Write file successfully!");
 } catch (err) {
-  console.error(`Oops, something went wrong`, err);
+  console.error("Oops, something went wrong", err);
 }
